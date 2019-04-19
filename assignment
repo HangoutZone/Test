@@ -1,0 +1,129 @@
+// TestCoding.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Human
+{
+private:
+	std::string name;
+	int age;
+	char sex;
+	Human()
+	{
+
+	}
+protected:
+	Human(std::string n, int a, char s)
+	{
+		name = n;
+		age = a;
+		sex = s;
+	}
+	~Human()
+	{
+
+	}
+public:
+	void setName(std::string na)
+	{
+		name = na;
+	}
+	void setAge(int ag)
+	{
+		age = ag;
+	}
+	void setSex(char se)
+	{
+		sex = se;
+	}
+	std::string getName()
+	{
+		return name;
+	}
+	int getAge()
+	{
+		return age;
+	}
+	char getSex()
+	{
+		return sex;
+	}
+};
+
+class Parent : public Human
+{
+private:
+	std::vector<std::string> children;
+	Parent()
+	{
+
+	}
+public:
+	Parent(std::string n, int a, char s) : Human
+	{
+		name = n;
+		age = a;
+		sex = s;
+	}
+	void printChild()
+	{
+
+	}
+	void setChild(Child)
+	{
+
+	}
+	void setChildAllowance(allowance, Child)
+	{
+
+	}
+};
+
+class Child;
+
+class Child : public Human
+{
+private:
+	std::string momName;
+	std::string dadName;
+	int allowance;
+	Child()
+	{
+
+	}
+public:
+	Child(std::string n, int a, char s, std::string mom, std::string dad) : Human
+	{
+		name = n;
+		age = a;
+		sex = s;
+		momName = mom;
+		dadName = dad;
+		allowance = 0;
+	}
+	int getAllowance() const
+	{
+		std::cout << "Allowance: " << allowance << std::endl;
+	}
+};
+
+int main()
+{
+	Parent mom("March", 34, 'F');
+	Parent dad("Homer", 36, 'M');
+	Child childOne("Lisa", 12, 'F');
+	Child childTwo("Bart", 10, 'M');
+	Child childThree("Maggie", 3, 'F');
+
+	mom.add(childOne, childTwo.childThree);
+
+	dad.setChildAllowance(childTwo, 5);
+	void printInfo(Human)
+	{
+		std::cout <<Human.getName << Human.getAge << Human.getSex << std::endl;
+	}
+}
